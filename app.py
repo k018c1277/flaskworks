@@ -4,8 +4,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    list = {'apple':'リンゴ', 'orange':'みかん', 'lemon':'レモン'}
-    return render_template('index.html', list=list)
+    return render_template('index.html', num = 10)
+    
 if __name__ == '__main__' :
     app.debug = True
     app.run()
