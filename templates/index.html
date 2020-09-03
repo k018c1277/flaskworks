@@ -1,15 +1,17 @@
 <thml>
-        <head>
-            <meta charset="UTF-8">
-        </head>
+    <head>
+        <meta charset="UTF-8">
+    </head>
     
         <body>
-            <ul>
-                {% for i in range(num + 1) %}
-                    {% if i % 2 != 0 %}
-                    {{ i }}
+            <h1>70点以上の科目</h1>
+            <p>
+                {% for l in list %}
+                    {% if list[l] >= 70 %}
+                        {{ l }}
                     {% endif %}
                 {% endfor %}
+            </p>
             </ul>
         </body>
     </thml>
