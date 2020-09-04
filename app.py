@@ -4,9 +4,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    list =  {'英語': 87, '数学': 90, '国語': 45, '理科': 75, '社会': 31}
-    return render_template('index.html', list = list)
-    
-if __name__ == '__main__' :
+    return render_template('index.html', message='indexページ')
+
+@app.route('/hello/')
+def hello():
+    return render_template('hello.html', message="Helloページ")
+
+if __name__ == '__main__':
     app.debug = True
     app.run()

@@ -1,17 +1,9 @@
 <thml>
-    <head>
-        <meta charset="UTF-8">
-    </head>
-    
-        <body>
-            <h1>70点以上の科目</h1>
-            <p>
-                {% for l in list %}
-                    {% if list[l] >= 70 %}
-                        {{ l }}
-                    {% endif %}
-                {% endfor %}
-            </p>
-            </ul>
-        </body>
-    </thml>
+        <head>
+            <meta charset="UTF-8">
+        </head>
+        
+            <body>
+                <h1>{{ message }}</h1>
+            </body>
+        </thml>
