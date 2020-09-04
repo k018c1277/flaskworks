@@ -1,9 +1,13 @@
+<!DOCTYPE html>
 <thml>
-        <head>
-            <meta charset="UTF-8">
-        </head>
+    <head>
+        <meta charset="UTF-8">
+    </head>
         
-            <body>
-                <h1>{{ user }}を追加しました</h1>
-            </body>
-        </thml>
+    <body>
+        <form method="post" action="/send">
+            <input type="text" id="msg" name="msg">
+            <input type="submit" value="送信">
+        </form>
+    </body>
+</thml>
