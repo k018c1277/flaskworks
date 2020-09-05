@@ -1,17 +1,26 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
+import mysql.connector as db
+
+db_param  = {
+    'user' : 'mysql',
+    'host' : 'localhost',
+    'password' : '',
+    'database' : 'db1'
+}
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def index():
-        return render_template('index.html')
-
-@app.route('/send', methods=['POST'])
-def send():
-        msg = request.form.get('msg')
-        return render_template('receive.html',  message = msg)
-
-if __name__ == '__main__':
-    app.debug = True
-    app.run()
+    conn = db.connect(**db_param)
+    cur = conn.cursor()
+    stmt = 'SELECT * FROM books'
+    cur.execute(stmt)
+    rows = cur.fetchall()
+    cur.close()
+    conn.close()
+    return render_template('index.html', books=rows)
+    
+if __name__=='__main__':
+        app.debug = True
+        app.run()
